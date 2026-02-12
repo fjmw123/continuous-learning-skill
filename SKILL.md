@@ -1,5 +1,5 @@
 ---
-name: continuous-learning
+name: continuous-learning-skill
 description: >-
   Autonomous learning skill for OpenClaw that extracts insights from conversations,
   analyzes Obsidian notes, observes user behavior patterns, and aggregates web content.

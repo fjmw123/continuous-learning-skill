@@ -23,8 +23,8 @@
 ### 安装
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/continuous-learning.git
-cd continuous-learning
+git clone https://github.com/fjmw123/continuous-learning-skill-skill.git
+cd continuous-learning-skill
 
 # 安装依赖
 npm install
@@ -134,7 +134,7 @@ cat ~/openclaw/MEMORY.md | tail -20
 
 - **文档**: [SKILL.md](SKILL.md), [SETUP.md](SETUP.md)
 - **示例**: [examples/](examples/)
-- **问题**: [GitHub Issues](https://github.com/yourusername/continuous-learning/issues)
+- **问题**: [GitHub Issues](https://github.com/fjmw123/continuous-learning-skill-skill/issues)
 
 ---
 

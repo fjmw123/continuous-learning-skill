@@ -1,5 +1,5 @@
 {
-  "name": "openclaw-continuous-learning",
+  "name": "openclaw-continuous-learning-skill",
   "version": "1.0.0",
   "description": "Autonomous learning skill for OpenClaw that extracts insights from conversations, analyzes Obsidian notes, observes user behavior patterns, and aggregates web content.",
   "main": "scripts/init-learning.mjs",
@@ -12,8 +12,10 @@
   },
   "keywords": [
     "openclaw",
+    "openclaw-skill",
     "ai",
     "continuous-learning",
+    "continuous-learning-skill",
     "obsidian",
     "knowledge-graph",
     "automation",
@@ -25,12 +27,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fjmw123/continuous-learning.git"
+    "url": "https://github.com/fjmw123/continuous-learning-skill-skill.git"
   },
   "bugs": {
-    "url": "https://github.com/fjmw123/continuous-learning/issues"
+    "url": "https://github.com/fjmw123/continuous-learning-skill-skill/issues"
   },
-  "homepage": "https://github.com/fjmw123/continuous-learning#readme",
+  "homepage": "https://github.com/fjmw123/continuous-learning-skill-skill#readme",
   "engines": {
     "node": ">=16.0.0"
   },

@@ -23,8 +23,8 @@
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/continuous-learning.git
-cd continuous-learning
+git clone https://github.com/fjmw123/continuous-learning-skill-skill.git
+cd continuous-learning-skill
 
 # Install dependencies
 npm install
@@ -134,7 +134,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Documentation**: [SKILL_EN.md](SKILL_EN.md), [SETUP_EN.md](SETUP_EN.md)
 - **Examples**: [examples/](examples/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/continuous-learning/issues)
+- **Issues**: [GitHub Issues](https://github.com/fjmw123/continuous-learning-skill-skill/issues)
 
 ---
 

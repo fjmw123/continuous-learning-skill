@@ -23,7 +23,7 @@
 
 ```bash
 # 从 GitHub 克隆
-git clone https://github.com/yourusername/continuous-learning.git
+git clone https://github.com/fjmw123/continuous-learning-skill.git
 cd continuous-learning
 
 # 或下载 ZIP 文件解压

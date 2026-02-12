@@ -5,7 +5,7 @@
 ### 1. 创建 GitHub 仓库
 1. 访问 https://github.com/new
 2. 填写仓库信息：
-   - **Repository name**: `continuous-learning`
+   - **Repository name**: `continuous-learning-skill`
    - **Description**: `Continuous Learning Skill for OpenClaw - Autonomous learning system`
    - **Public** 或 **Private**（建议先设为私有）
    - 勾选 "Add a README file"
@@ -40,7 +40,7 @@ git add .
 git commit -m "Initial release: Continuous Learning Skill v1.0.0"
 
 # 5. 创建并推送仓库
-gh repo create continuous-learning --public --source=. --remote=origin --push
+gh repo create continuous-learning-skill --public --source=. --remote=origin --push
 ```
 
 ### 方案B：手动 Git 操作
@@ -55,7 +55,7 @@ git add .
 git commit -m "Initial release: Continuous Learning Skill v1.0.0"
 
 # 3. 添加远程仓库
-git remote add origin https://github.com/yourusername/continuous-learning.git
+git remote add origin https://github.com/fjmw123/continuous-learning-skill.git
 
 # 4. 推送代码
 git branch -M main
@@ -189,7 +189,7 @@ gh release create v1.0.0 --title "v1.0.0" --notes "Initial release"
 ssh -T git@github.com
 
 # 或使用 HTTPS 替代 SSH
-git remote set-url origin https://github.com/yourusername/continuous-learning.git
+git remote set-url origin https://github.com/fjmw123/continuous-learning-skill.git
 ```
 
 #### 2. 大文件上传失败
