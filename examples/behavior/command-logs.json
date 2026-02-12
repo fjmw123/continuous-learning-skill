@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "collection_period": "2026-02-05 to 2026-02-12",
+    "total_commands": 127,
+    "unique_sessions": 8,
+    "privacy_mode": "minimal"
+  },
+  "commands": [
+    {
+      "timestamp": "2026-02-12T09:00:00.000Z",
+      "command": "cron list",
+      "session": "main",
+      "duration": 1500,
+      "success": true,
+      "category": "system"
+    },
+    {
+      "timestamp": "2026-02-12T10:00:00.000Z",
+      "command": "memory search",
+      "session": "main",
+      "duration": 2000,
+      "success": true,
+      "category": "knowledge"
+    },
+    {
+      "timestamp": "2026-02-12T11:00:00.000Z",
+      "command": "read",
+      "session": "main",
+      "duration": 1000,
+      "success": true,
+      "category": "file"
+    },
+    {
+      "timestamp": "2026-02-12T12:00:00.000Z",
+      "command": "edit",
+      "session": "main",
+      "duration": 3000,
+      "success": true,
+      "category": "file"
+    },
+    {
+      "timestamp": "2026-02-12T13:00:00.000Z",
+      "command": "exec",
+      "session": "main",
+      "duration": 5000,
+      "success": true,
+      "category": "system"
+    },
+    {
+      "timestamp": "2026-02-12T14:00:00.000Z",
+      "command": "cron list",
+      "session": "main",
+      "duration": 1200,
+      "success": true,
+      "category": "system"
+    },
+    {
+      "timestamp": "2026-02-12T15:00:00.000Z",
+      "command": "memory search",
+      "session": "main",
+      "duration": 1800,
+      "success": true,
+      "category": "knowledge"
+    },
+    {
+      "timestamp": "2026-02-12T16:00:00.000Z",
+      "command": "read",
+      "session": "main",
+      "duration": 900,
+      "success": true,
+      "category": "file"
+    },
+    {
+      "timestamp": "2026-02-12T17:00:00.000Z",
+      "command": "edit",
+      "session": "main",
+      "duration": 2500,
+      "success": true,
+      "category": "file"
+    },
+    {
+      "timestamp": "2026-02-12T18:00:00.000Z",
+      "command": "exec",
+      "session": "main",
+      "duration": 4000,
+      "success": true,
+      "category": "system"
+    }
+  ],
+  "statistics": {
+    "by_category": {
+      "system": 4,
+      "knowledge": 2,
+      "file": 4
+    },
+    "by_session": {
+      "main": 10
+    },
+    "by_hour": {
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 1,
+      "18": 1
+    },
+    "success_rate": 100,
+    "average_duration": 2290,
+    "total_duration": 22900
+  }
+}

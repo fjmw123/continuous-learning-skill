@@ -1,0 +1,149 @@
+{
+  "conversation_learning": {
+    "enabled": true,
+    "extract_facts": true,
+    "extract_preferences": true,
+    "extract_decisions": true,
+    "extract_commitments": true,
+    "update_memory_md": true,
+    "update_obsidian": true,
+    "min_confidence": 0.7,
+    "max_messages_per_session": 100,
+    "exclude_sessions": ["cron", "system", "isolated"],
+    "output_formats": ["memory", "obsidian"],
+    "auto_trigger": true,
+    "trigger_interval_hours": 1,
+    "privacy_filters": {
+      "mask_personal_info": true,
+      "exclude_sensitive_topics": ["password", "token", "secret"]
+    }
+  },
+  "note_analysis": {
+    "enabled": true,
+    "obsidian_vault": "/Users/sosme_macmini/Library/Mobile Documents/com~apple~CloudDocs/Documents/Obsidian_SoSME",
+    "incremental": true,
+    "build_knowledge_graph": true,
+    "generate_link_suggestions": true,
+    "exclude_folders": ["Attachments", ".trash", ".git", "node_modules", "Assets"],
+    "include_extensions": [".md", ".txt", ".markdown"],
+    "max_file_size_mb": 10,
+    "min_similarity_score": 0.6,
+    "parallel_processing": 4,
+    "cache_enabled": true,
+    "cache_ttl_hours": 24,
+    "semantic_analysis": {
+      "enabled": true,
+      "model": "text-embedding-3-small",
+      "min_similarity": 0.7
+    },
+    "tag_analysis": {
+      "enabled": true,
+      "min_tag_frequency": 2,
+      "exclude_common_tags": ["#todo", "#inbox"]
+    }
+  },
+  "behavior_observation": {
+    "enabled": true,
+    "track_commands": true,
+    "track_sessions": true,
+    "analyze_patterns": "weekly",
+    "privacy_mode": "minimal",
+    "retention_days": 90,
+    "exclude_commands": ["password", "secret", "key", "token", "auth"],
+    "exclude_parameters": true,
+    "anonymize_user_data": true,
+    "log_level": "info",
+    "auto_cleanup": true,
+    "cleanup_interval_days": 7,
+    "command_categories": {
+      "file_operations": ["read", "write", "edit"],
+      "system_operations": ["exec", "process"],
+      "memory_operations": ["memory_search", "memory_get"],
+      "communication": ["message", "sessions_send"]
+    },
+    "workflow_detection": {
+      "enabled": true,
+      "min_sequence_length": 3,
+      "min_frequency": 2,
+      "window_size": 5
+    }
+  },
+  "web_aggregation": {
+    "enabled": true,
+    "topics_config": "~/.config/continuous-learning/topics.json",
+    "output_to": "obsidian",
+    "language": "zh",
+    "max_results_per_topic": 5,
+    "min_relevance_score": 0.7,
+    "exclude_domains": ["spam-site.com", "low-quality-blog.net", "clickbait-news.org"],
+    "include_sources": ["news", "blogs", "academic", "industry"],
+    "time_range": "week",
+    "cache_enabled": true,
+    "cache_ttl_hours": 6,
+    "rate_limit_requests_per_minute": 10,
+    "content_quality": {
+      "min_content_length": 500,
+      "max_content_length": 5000,
+      "require_author": false,
+      "require_date": true
+    },
+    "summarization": {
+      "enabled": true,
+      "max_summary_length": 200,
+      "include_key_points": true,
+      "language": "zh"
+    }
+  },
+  "general": {
+    "log_level": "info",
+    "data_retention_days": 365,
+    "backup_enabled": true,
+    "backup_frequency": "weekly",
+    "backup_location": "~/.local/share/continuous-learning/backups",
+    "performance": {
+      "max_concurrent_tasks": 3,
+      "task_timeout_minutes": 30,
+      "memory_limit_mb": 512
+    },
+    "notifications": {
+      "enabled": true,
+      "channel": "telegram",
+      "recipient": "8263390807",
+      "events": ["error", "completed", "insights_found"]
+    },
+    "privacy": {
+      "local_storage_only": true,
+      "encrypt_sensitive_data": false,
+      "auto_delete_old_data": true,
+      "data_anonymization": true
+    },
+    "updates": {
+      "auto_check_updates": true,
+      "check_interval_days": 7,
+      "notify_on_updates": true
+    }
+  },
+  "integrations": {
+    "obsidian": {
+      "enabled": true,
+      "vault_path": "/Users/sosme_macmini/Library/Mobile Documents/com~apple~CloudDocs/Documents/Obsidian_SoSME",
+      "output_folders": {
+        "conversations": "000 Inbox/Auto-Learning",
+        "web_aggregation": "000 Inbox/Web-Aggregation",
+        "behavior_reports": "000 Inbox/Behavior-Reports",
+        "knowledge_graph": "300 Resources/Knowledge-Graph"
+      },
+      "frontmatter_templates": {
+        "conversation": "auto-learning",
+        "web_content": "web-aggregation",
+        "behavior": "behavior-report"
+      }
+    },
+    "openclaw": {
+      "enabled": true,
+      "sessions_path": "~/.openclaw/agents/main/sessions",
+      "memory_path": "~/openclaw/MEMORY.md",
+      "cron_integration": true
+    }
+  }
+}

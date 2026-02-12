@@ -1,0 +1,193 @@
+{
+  "conversation_learning": {
+    "enabled": true,
+    "extract_facts": true,
+    "extract_preferences": true,
+    "extract_decisions": true,
+    "extract_commitments": true,
+    "update_memory_md": true,
+    "update_obsidian": false,
+    "min_confidence": 0.8,
+    "max_messages_per_session": 50,
+    "exclude_sessions": ["cron", "system", "isolated", "test"],
+    "output_formats": ["memory"],
+    "auto_trigger": true,
+    "trigger_interval_hours": 3,
+    "privacy_mode": "strict",
+    "anonymize_personal_data": true,
+    "data_encryption": true
+  },
+  "note_analysis": {
+    "enabled": true,
+    "obsidian_vault": "/Users/sosme_macmini/Library/Mobile Documents/com~apple~CloudDocs/Documents/Obsidian_SoSME",
+    "incremental": true,
+    "build_knowledge_graph": true,
+    "generate_link_suggestions": true,
+    "exclude_folders": ["Attachments", ".trash", ".git", "node_modules", "Backups"],
+    "include_extensions": [".md"],
+    "max_file_size_mb": 5,
+    "min_similarity_score": 0.7,
+    "parallel_processing": 2,
+    "cache_enabled": true,
+    "cache_ttl_hours": 48,
+    "tag_extraction": true,
+    "entity_recognition": false,
+    "semantic_analysis": true,
+    "incremental_only": true,
+    "skip_large_files": true
+  },
+  "behavior_observation": {
+    "enabled": true,
+    "track_commands": true,
+    "track_sessions": false,
+    "analyze_patterns": "weekly",
+    "privacy_mode": "strict",
+    "retention_days": 30,
+    "exclude_commands": ["password", "secret", "key", "token", "auth", "login"],
+    "exclude_parameters": true,
+    "anonymize_user_data": true,
+    "log_level": "warn",
+    "auto_cleanup": true,
+    "cleanup_interval_days": 7,
+    "workflow_detection": true,
+    "efficiency_analysis": true,
+    "automation_suggestions": true,
+    "data_encryption": true,
+    "local_storage_only": true
+  },
+  "web_aggregation": {
+    "enabled": true,
+    "topics_config": "~/.config/continuous-learning/topics.json",
+    "output_to": "obsidian",
+    "language": "zh",
+    "max_results_per_topic": 3,
+    "min_relevance_score": 0.8,
+    "exclude_domains": ["spam-site.com", "low-quality-blog.net", "clickbait-news.org"],
+    "include_sources": ["news", "academic"],
+    "time_range": "week",
+    "cache_enabled": true,
+    "cache_ttl_hours": 12,
+    "rate_limit_requests_per_minute": 5,
+    "content_summarization": true,
+    "trend_analysis": true,
+    "quality_filtering": true,
+    "duplicate_detection": true,
+    "source_verification": true
+  },
+  "general": {
+    "log_level": "warn",
+    "data_retention_days": 90,
+    "backup_enabled": true,
+    "backup_frequency": "daily",
+    "backup_location": "~/.local/share/continuous-learning/backups",
+    "backup_retention_days": 30,
+    "notification_enabled": true,
+    "notification_level": "error",
+    "performance_monitoring": true,
+    "auto_update": false,
+    "debug_mode": false,
+    "environment": "production",
+    "health_check_enabled": true,
+    "health_check_interval_hours": 24,
+    "error_reporting": true,
+    "max_error_count": 10
+  },
+  "integration": {
+    "openclaw": {
+      "sessions_path": "~/.openclaw/agents/main/sessions",
+      "memory_path": "~/openclaw/MEMORY.md",
+      "auto_sync": true,
+      "sync_interval_hours": 1
+    },
+    "obsidian": {
+      "vault_path": "/Users/sosme_macmini/Library/Mobile Documents/com~apple~CloudDocs/Documents/Obsidian_SoSME",
+      "inbox_folder": "000 Inbox",
+      "auto_learning_folder": "Auto-Learning",
+      "web_aggregation_folder": "Web-Aggregation",
+      "max_files_per_folder": 100,
+      "auto_archive": true,
+      "archive_after_days": 30
+    },
+    "external_apis": {
+      "tavily": {
+        "api_key_env": "TAVILY_API_KEY",
+        "base_url": "https://api.tavily.com",
+        "timeout_seconds": 30,
+        "retry_attempts": 3,
+        "circuit_breaker_enabled": true
+      }
+    }
+  },
+  "scheduling": {
+    "conversation_learning": {
+      "enabled": true,
+      "schedule": "0 */3 * * *",
+      "timeout_minutes": 10,
+      "retry_on_failure": true,
+      "max_retries": 2
+    },
+    "note_analysis": {
+      "enabled": true,
+      "schedule": "0 3 * * *",
+      "timeout_minutes": 60,
+      "retry_on_failure": false,
+      "skip_on_high_load": true
+    },
+    "web_aggregation": {
+      "enabled": true,
+      "schedule": "0 10 * * *",
+      "timeout_minutes": 20,
+      "retry_on_failure": true,
+      "max_retries": 1,
+      "skip_on_api_limit": true
+    },
+    "behavior_report": {
+      "enabled": true,
+      "schedule": "0 8 * * 1",
+      "timeout_minutes": 15,
+      "retry_on_failure": false
+    },
+    "maintenance": {
+      "enabled": true,
+      "schedule": "0 4 * * 0",
+      "tasks": ["cleanup_logs", "optimize_cache", "validate_data"]
+    }
+  },
+  "security": {
+    "data_encryption": true,
+    "encryption_algorithm": "AES-256-GCM",
+    "access_control": true,
+    "audit_logging": true,
+    "input_validation": true,
+    "output_sanitization": true,
+    "rate_limiting": true,
+    "max_requests_per_minute": 60,
+    "ip_whitelist": [],
+    "api_key_required": true,
+    "ssl_required": true
+  },
+  "performance": {
+    "memory_limit_mb": 512,
+    "cpu_limit_percent": 50,
+    "disk_quota_mb": 1024,
+    "concurrent_tasks": 2,
+    "batch_size": 50,
+    "cache_size_mb": 100,
+    "query_timeout_seconds": 30,
+    "network_timeout_seconds": 10,
+    "compression_enabled": true,
+    "lazy_loading": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics_collection": true,
+    "log_aggregation": true,
+    "alerting": true,
+    "alert_channels": ["log"],
+    "health_endpoint": "/health",
+    "metrics_endpoint": "/metrics",
+    "uptime_monitoring": true,
+    "performance_monitoring": true,
+    "error_tracking": true
+  }
+}

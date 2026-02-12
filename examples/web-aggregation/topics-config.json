@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-02-10",
+    "updated": "2026-02-12",
+    "author": "SoSME",
+    "description": "示例主题配置 - 用于测试和演示"
+  },
+  "topics": [
+    {
+      "name": "AI",
+      "display_name": "人工智能",
+      "description": "AI技术发展、大模型更新、机器学习趋势",
+      "queries": [
+        "AI news 2026",
+        "artificial intelligence breakthroughs",
+        "LLM updates latest",
+        "machine learning trends",
+        "AI ethics discussion"
+      ],
+      "keywords": ["AI", "人工智能", "机器学习", "大模型", "深度学习"],
+      "frequency": "daily",
+      "max_results": 5,
+      "language": "zh",
+      "sources": ["news", "blogs", "academic"],
+      "time_range": "week",
+      "min_relevance": 0.7,
+      "exclude_keywords": ["spam", "promotion", "advertisement"],
+      "output_template": "standard"
+    },
+    {
+      "name": "SmartMetro",
+      "display_name": "轨道交通智能化",
+      "description": "地铁智能化、预测性维护、数字孪生技术",
+      "queries": [
+        "smart metro digitalization",
+        "predictive maintenance railway",
+        "digital twin metro system",
+        "CBTC system updates",
+        "rail asset management digital"
+      ],
+      "keywords": ["地铁", "轨道交通", "智能化", "预测性维护", "数字孪生"],
+      "frequency": "daily",
+      "max_results": 3,
+      "language": "zh",
+      "sources": ["news", "academic", "industry"],
+      "time_range": "month",
+      "min_relevance": 0.6,
+      "exclude_keywords": ["job", "recruitment", "sales"],
+      "output_template": "technical"
+    },
+    {
+      "name": "KnowledgeMonetization",
+      "display_name": "知识变现",
+      "description": "知识付费、创作者经济、副业收入",
+      "queries": [
+        "knowledge monetization 2026",
+        "creator economy trends",
+        "side income ideas",
+        "expert consulting business",
+        "digital product creation"
+      ],
+      "keywords": ["知识变现", "副业", "创业", "咨询", "数字产品"],
+      "frequency": "weekly",
+      "max_results": 3,
+      "language": "zh",
+      "sources": ["blogs", "news", "community"],
+      "time_range": "month",
+      "min_relevance": 0.65,
+      "exclude_keywords": ["scam", "get rich quick"],
+      "output_template": "business"
+    }
+  ],
+  "general": {
+    "default_language": "zh",
+    "default_max_results": 5,
+    "default_time_range": "week",
+    "duplicate_check": true,
+    "summary_length": 200,
+    "include_source_metadata": true,
+    "cache_enabled": true,
+    "cache_ttl_hours": 6,
+    "rate_limit_requests_per_minute": 10,
+    "user_agent": "Continuous-Learning-Bot/1.0",
+    "timeout_seconds": 30
+  },
+  "output": {
+    "format": "obsidian",
+    "directory": "000 Inbox",
+    "filename_template": "Web-Aggregation-{topic}-{date}.md",
+    "frontmatter": {
+      "date_created": "{date}",
+      "tags": ["web-aggregation", "auto-learning", "{topic}"],
+      "source": "Tavily API"
+    },
+    "sections": ["summary", "articles", "trends", "recommendations"],
+    "include_original_links": true,
+    "include_relevance_scores": true,
+    "group_by_source": false
+  },
+  "quality": {
+    "min_content_length": 100,
+    "max_content_length": 5000,
+    "require_https": true,
+    "exclude_paywalled": true,
+    "exclude_low_quality_domains": true,
+    "preferred_domains": [
+      "github.com",
+      "medium.com",
+      "towardsdatascience.com",
+      "arxiv.org",
+      "ieee.org"
+    ],
+    "blacklisted_domains": [
+      "spam-site.com",
+      "clickbait-news.net",
+      "fake-news.org"
+    ]
+  }
+}

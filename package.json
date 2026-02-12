@@ -1,0 +1,40 @@
+{
+  "name": "openclaw-continuous-learning",
+  "version": "1.0.0",
+  "description": "Autonomous learning skill for OpenClaw that extracts insights from conversations, analyzes Obsidian notes, observes user behavior patterns, and aggregates web content.",
+  "main": "scripts/init-learning.mjs",
+  "scripts": {
+    "test": "node examples/run-test.sh",
+    "learn": "node scripts/learn-from-conversation.mjs --since 1h",
+    "analyze": "node scripts/analyze-notes.mjs --incremental",
+    "aggregate": "node scripts/aggregate-web.mjs --topic AI",
+    "report": "node scripts/behavior-report.mjs --period weekly"
+  },
+  "keywords": [
+    "openclaw",
+    "ai",
+    "continuous-learning",
+    "obsidian",
+    "knowledge-graph",
+    "automation"
+  ],
+  "author": "SoSME",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/continuous-learning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/continuous-learning/issues"
+  },
+  "homepage": "https://github.com/yourusername/continuous-learning#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}

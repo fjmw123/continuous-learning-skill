@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "generated": "2026-02-12T21:25:00.000Z",
+    "vault_path": "/examples/notes/sample-notes",
+    "total_notes": 3,
+    "analysis_duration_ms": 450
+  },
+  "nodes": [
+    {
+      "id": "项目管理",
+      "type": "note",
+      "title": "项目管理",
+      "path": "项目管理.md",
+      "tags": ["项目管理", "工作", "效率"],
+      "created": "2026-01-15T09:30:00.000Z",
+      "modified": "2026-02-10T14:20:00.000Z",
+      "word_count": 120,
+      "link_count": 3
+    },
+    {
+      "id": "AI技术",
+      "type": "note",
+      "title": "AI技术",
+      "path": "AI技术.md",
+      "tags": ["AI", "技术", "机器学习"],
+      "created": "2026-01-20T10:15:00.000Z",
+      "modified": "2026-02-11T16:45:00.000Z",
+      "word_count": 95,
+      "link_count": 1
+    },
+    {
+      "id": "个人成长",
+      "type": "note",
+      "title": "个人成长",
+      "path": "个人成长.md",
+      "tags": ["成长", "学习", "职业发展"],
+      "created": "2026-01-25T14:30:00.000Z",
+      "modified": "2026-02-12T09:15:00.000Z",
+      "word_count": 150,
+      "link_count": 2
+    }
+  ],
+  "edges": [
+    {
+      "source": "项目管理",
+      "target": "AI技术",
+      "type": "explicit_link",
+      "weight": 1.0,
+      "context": "AI在项目管理中的应用"
+    },
+    {
+      "source": "项目管理",
+      "target": "个人成长",
+      "type": "explicit_link",
+      "weight": 1.0,
+      "context": "项目经理的成长路径"
+    },
+    {
+      "source": "AI技术",
+      "target": "项目管理",
+      "type": "explicit_link",
+      "weight": 1.0,
+      "context": "AI辅助决策"
+    },
+    {
+      "source": "个人成长",
+      "target": "项目管理",
+      "type": "explicit_link",
+      "weight": 1.0,
+      "context": "项目经理成长路径"
+    },
+    {
+      "source": "个人成长",
+      "target": "AI技术",
+      "type": "explicit_link",
+      "weight": 1.0,
+      "context": "未来重要技能"
+    },
+    {
+      "source": "项目管理",
+      "target": "AI技术",
+      "type": "tag_similarity",
+      "weight": 0.3,
+      "context": "共享主题：技术应用"
+    },
+    {
+      "source": "项目管理",
+      "target": "个人成长",
+      "type": "tag_similarity",
+      "weight": 0.4,
+      "context": "共享主题：职业发展"
+    }
+  ],
+  "tag_clusters": {
+    "项目管理": ["项目管理", "工作", "效率"],
+    "技术": ["AI", "技术", "机器学习"],
+    "成长": ["成长", "学习", "职业发展"]
+  },
+  "statistics": {
+    "total_nodes": 3,
+    "total_edges": 7,
+    "explicit_links": 5,
+    "implicit_links": 2,
+    "average_links_per_note": 2.33,
+    "tag_distribution": {
+      "项目管理": 1,
+      "工作": 1,
+      "效率": 1,
+      "AI": 1,
+      "技术": 1,
+      "机器学习": 1,
+      "成长": 1,
+      "学习": 1,
+      "职业发展": 1
+    }
+  }
+}

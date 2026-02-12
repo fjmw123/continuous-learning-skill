@@ -1,0 +1,24 @@
+{
+  "conversation_learning": {
+    "enabled": true,
+    "extract_facts": true,
+    "update_memory_md": true,
+    "min_confidence": 0.7
+  },
+  "note_analysis": {
+    "enabled": false,
+    "obsidian_vault": "/path/to/obsidian/vault"
+  },
+  "behavior_observation": {
+    "enabled": false,
+    "track_commands": false
+  },
+  "web_aggregation": {
+    "enabled": false,
+    "topics_config": "~/.config/continuous-learning/topics.json"
+  },
+  "general": {
+    "log_level": "info",
+    "data_retention_days": 30
+  }
+}
