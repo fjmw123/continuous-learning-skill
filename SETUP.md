@@ -1,72 +1,72 @@
-# Continuous Learning Skill - 安装与配置指南
+# Continuous Learning Skill - Installation & Configuration Guide
 
-## 📋 系统要求
+## 📋 System Requirements
 
-### 硬件要求
-- **内存**: 至少 2GB 可用内存
-- **存储**: 至少 500MB 可用空间（用于日志和缓存）
-- **网络**: 稳定的互联网连接（用于网络聚合）
+### Hardware Requirements
+- **Memory**: At least 2GB available RAM
+- **Storage**: At least 500MB available space (for logs and cache)
+- **Network**: Stable internet connection (for web aggregation)
 
-### 软件要求
-- **Node.js**: v16.0.0 或更高版本
-- **OpenClaw**: v2026.2.0 或更高版本
-- **Obsidian** (可选): 用于笔记分析和内容存储
+### Software Requirements
+- **Node.js**: v16.0.0 or higher
+- **OpenClaw**: v2026.2.0 or higher
+- **Obsidian** (optional): For note analysis and content storage
 
-### 权限要求
-- 读取 OpenClaw 会话文件的权限
-- 写入配置目录的权限
-- 执行 Node.js 脚本的权限
+### Permission Requirements
+- Read access to OpenClaw session files
+- Write access to configuration directories
+- Execute permission for Node.js scripts
 
-## 🛠️ 安装步骤
+## 🛠️ Installation Steps
 
-### 1. 获取技能文件
+### 1. Get Skill Files
 
 ```bash
-# 从 GitHub 克隆
+# Clone from GitHub
 git clone https://github.com/fjmw123/continuous-learning-skill.git
-cd continuous-learning
+cd continuous-learning-skill
 
-# 或下载 ZIP 文件解压
+# Or download ZIP file and extract
 ```
 
-### 2. 安装依赖
+### 2. Install Dependencies
 
 ```bash
-# 检查 Node.js 版本
-node --version  # 需要 >= 16.0.0
+# Check Node.js version
+node --version  # Requires >= 16.0.0
 
-# 安装依赖包
+# Install dependencies
 npm install
-# 或使用 yarn
+# Or use yarn
 yarn install
 ```
 
-### 3. 初始化配置
+### 3. Initialize Configuration
 
 ```bash
-# 运行初始化脚本
+# Run initialization script
 node scripts/init-learning.mjs
 ```
 
-初始化脚本会创建以下目录结构：
+The initialization script creates the following directory structure:
 ```
 ~/.config/continuous-learning/
-├── config.json          # 主配置文件
-├── topics.json          # 网络聚合主题配置
-└── behavior-config.json # 行为观察配置（可选）
+├── config.json          # Main configuration file
+├── topics.json          # Web aggregation topic configuration
+└── behavior-config.json # Behavior observation configuration (optional)
 
 ~/.local/share/continuous-learning/
-├── logs/                # 运行日志
-├── knowledge-graph/     # 知识图谱数据
-├── behavior/           # 行为日志
-└── cache/              # 缓存数据
+├── logs/                # Runtime logs
+├── knowledge-graph/     # Knowledge graph data
+├── behavior/           # Behavior logs
+└── cache/              # Cache data
 ```
 
-## 🔧 详细配置
+## 🔧 Detailed Configuration
 
-### 1. 主配置文件 (`config.json`)
+### 1. Main Configuration File (`config.json`)
 
-#### 对话学习配置
+#### Conversation Learning Configuration
 ```json
 {
   "conversation_learning": {
@@ -87,7 +87,7 @@ node scripts/init-learning.mjs
 }
 ```
 
-#### 笔记分析配置
+#### Note Analysis Configuration
 ```json
 {
   "note_analysis": {
@@ -107,7 +107,7 @@ node scripts/init-learning.mjs
 }
 ```
 
-#### 行为观察配置
+#### Behavior Observation Configuration
 ```json
 {
   "behavior_observation": {
@@ -127,7 +127,7 @@ node scripts/init-learning.mjs
 }
 ```
 
-#### 网络聚合配置
+#### Web Aggregation Configuration
 ```json
 {
   "web_aggregation": {
@@ -135,7 +135,7 @@ node scripts/init-learning.mjs
     "topics_config": "~/.config/continuous-learning/topics.json",
     "output_to": "obsidian",
     "language": "zh",
-    "max_results_per_topic": 5,
+    "max_results_per_tag": 5,
     "min_relevance_score": 0.7,
     "exclude_domains": ["spam-site.com", "low-quality-blog.net"],
     "include_sources": ["news", "blogs", "academic"],
@@ -147,15 +147,15 @@ node scripts/init-learning.mjs
 }
 ```
 
-### 2. 主题配置文件 (`topics.json`)
+### 2. Topic Configuration File (`topics.json`)
 
 ```json
 {
   "topics": [
     {
       "name": "AI",
-      "display_name": "人工智能",
-      "description": "AI技术发展、大模型更新、机器学习趋势",
+      "display_name": "Artificial Intelligence",
+      "description": "AI technology development, large model updates, machine learning trends",
       "queries": [
         "AI news 2026",
         "artificial intelligence breakthroughs",
@@ -163,7 +163,7 @@ node scripts/init-learning.mjs
         "machine learning trends",
         "AI ethics discussion"
       ],
-      "keywords": ["AI", "人工智能", "机器学习", "大模型", "深度学习"],
+      "keywords": ["AI", "artificial intelligence", "machine learning", "large language models", "deep learning"],
       "frequency": "daily",
       "max_results": 5,
       "language": "zh",
@@ -174,8 +174,8 @@ node scripts/init-learning.mjs
     },
     {
       "name": "SmartMetro",
-      "display_name": "轨道交通智能化",
-      "description": "地铁智能化、预测性维护、数字孪生技术",
+      "display_name": "Rail Transit Intelligence",
+      "description": "Metro intelligence, predictive maintenance, digital twin technology",
       "queries": [
         "smart metro digitalization",
         "predictive maintenance railway",
@@ -183,7 +183,7 @@ node scripts/init-learning.mjs
         "CBTC system updates",
         "rail asset management digital"
       ],
-      "keywords": ["地铁", "轨道交通", "智能化", "预测性维护", "数字孪生"],
+      "keywords": ["metro", "rail transit", "intelligence", "predictive maintenance", "digital twin"],
       "frequency": "daily",
       "max_results": 3,
       "language": "zh",
@@ -203,255 +203,255 @@ node scripts/init-learning.mjs
 }
 ```
 
-### 3. 环境变量配置
+### 3. Environment Variable Configuration
 
-#### 必需的环境变量
+#### Required Environment Variables
 ```bash
-# Tavily API Key (用于网络聚合)
+# Tavily API Key (for web aggregation)
 export TAVILY_API_KEY="your_tavily_api_key_here"
 
-# Obsidian Vault 路径 (用于笔记分析)
+# Obsidian Vault Path (for note analysis)
 export OBSIDIAN_VAULT="/path/to/your/obsidian/vault"
 
-# OpenClaw 会话路径
+# OpenClaw Sessions Path
 export OPENCLAW_SESSIONS_PATH="~/.openclaw/agents/main/sessions"
 ```
 
-#### 可选的环境变量
+#### Optional Environment Variables
 ```bash
-# 日志级别
+# Log level
 export CONTINUOUS_LEARNING_LOG_LEVEL="info"  # debug, info, warn, error
 
-# 数据目录
+# Data directory
 export CONTINUOUS_LEARNING_DATA_DIR="~/.local/share/continuous-learning"
 
-# 配置目录
+# Configuration directory
 export CONTINUOUS_LEARNING_CONFIG_DIR="~/.config/continuous-learning"
 
-# 缓存设置
+# Cache settings
 export CONTINUOUS_LEARNING_CACHE_ENABLED="true"
-export CONTINUOUS_LEARNING_CACHE_TTL="86400"  # 24小时，单位秒
+export CONTINUOUS_LEARNING_CACHE_TTL="86400"  # 24 hours, in seconds
 
-# 网络代理 (如果需要)
+# Network proxy (if needed)
 export HTTP_PROXY="http://proxy.example.com:8080"
 export HTTPS_PROXY="http://proxy.example.com:8080"
 ```
 
-#### 永久配置 (添加到 shell 配置文件)
+#### Permanent Configuration (Add to shell configuration file)
 ```bash
-# 编辑 ~/.zshrc 或 ~/.bashrc
+# Edit ~/.zshrc or ~/.bashrc
 echo 'export TAVILY_API_KEY="your_tavily_api_key_here"' >> ~/.zshrc
 echo 'export OBSIDIAN_VAULT="/path/to/your/obsidian/vault"' >> ~/.zshrc
 echo 'export CONTINUOUS_LEARNING_LOG_LEVEL="info"' >> ~/.zshrc
 
-# 重新加载配置
+# Reload configuration
 source ~/.zshrc
 ```
 
-## 🔐 权限设置
+## 🔐 Permission Settings
 
-### 1. 文件权限
+### 1. File Permissions
 ```bash
-# 确保有读取 OpenClaw 会话文件的权限
+# Ensure read access to OpenClaw session files
 ls -la ~/.openclaw/agents/main/sessions/
 
-# 如果需要，调整权限
+# Adjust permissions if needed
 chmod 755 ~/.openclaw
 chmod 755 ~/.openclaw/agents
 chmod 755 ~/.openclaw/agents/main
 chmod 755 ~/.openclaw/agents/main/sessions
 ```
 
-### 2. 目录权限
+### 2. Directory Permissions
 ```bash
-# 创建并设置数据目录权限
+# Create and set data directory permissions
 mkdir -p ~/.local/share/continuous-learning
 chmod 755 ~/.local/share/continuous-learning
 
-# 创建并设置配置目录权限
+# Create and set configuration directory permissions
 mkdir -p ~/.config/continuous-learning
 chmod 755 ~/.config/continuous-learning
 ```
 
-### 3. 脚本执行权限
+### 3. Script Execution Permissions
 ```bash
-# 确保脚本有执行权限
-chmod +x /path/to/continuous-learning/scripts/*.mjs
+# Ensure scripts have execute permissions
+chmod +x /path/to/continuous-learning-skill/scripts/*.mjs
 ```
 
-## 🚀 自动化部署
+## 🚀 Automated Deployment
 
-### 1. 使用 OpenClaw Cron 系统
+### 1. Using OpenClaw Cron System
 
 ```bash
-# 查看当前 cron 任务
+# View current cron tasks
 openclaw cron list
 
-# 添加对话学习任务 (每小时运行)
-openclaw cron add --name "对话学习" --schedule "0 * * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"运行对话学习脚本：node /path/to/continuous-learning/scripts/learn-from-conversation.mjs --since 1h --output both"}'
+# Add conversation learning task (runs hourly)
+openclaw cron add --name "Conversation Learning" --schedule "0 * * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"Run conversation learning script: node /path/to/continuous-learning-skill/scripts/learn-from-conversation.mjs --since 1h --output both"}'
 
-# 添加笔记分析任务 (每天凌晨2点)
-openclaw cron add --name "笔记分析" --schedule "0 2 * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"运行笔记分析脚本：node /path/to/continuous-learning/scripts/analyze-notes.mjs --incremental"}'
+# Add note analysis task (runs daily at 2 AM)
+openclaw cron add --name "Note Analysis" --schedule "0 2 * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"Run note analysis script: node /path/to/continuous-learning-skill/scripts/analyze-notes.mjs --incremental"}'
 
-# 添加网络聚合任务 (每天上午9点)
-openclaw cron add --name "网络聚合" --schedule "0 9 * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"运行网络聚合脚本：export TAVILY_API_KEY=\"your_tavily_api_key_here\" && node /path/to/continuous-learning/scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json"}'
+# Add web aggregation task (runs daily at 9 AM)
+openclaw cron add --name "Web Aggregation" --schedule "0 9 * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"Run web aggregation script: export TAVILY_API_KEY=\"your_tavily_api_key_here\" && node /path/to/continuous-learning-skill/scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json"}'
 
-# 添加行为报告任务 (每周一上午9点)
-openclaw cron add --name "行为报告" --schedule "0 9 * * 1" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"运行行为报告脚本：node /path/to/continuous-learning/scripts/behavior-report.mjs --period weekly --output file"}'
+# Add behavior report task (runs Monday at 9 AM)
+openclaw cron add --name "Behavior Report" --schedule "0 9 * * 1" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"Run behavior report script: node /path/to/continuous-learning-skill/scripts/behavior-report.mjs --period weekly --output file"}'
 ```
 
-### 2. 使用系统 Crontab
+### 2. Using System Crontab
 
 ```bash
-# 编辑 crontab
+# Edit crontab
 crontab -e
 
-# 添加以下任务
-# 每小时：对话学习
-0 * * * * cd /path/to/continuous-learning && node scripts/learn-from-conversation.mjs --since 1h --output both >> ~/.local/share/continuous-learning/logs/conversation.log 2>&1
+# Add the following tasks
+# Hourly: Conversation learning
+0 * * * * cd /path/to/continuous-learning-skill && node scripts/learn-from-conversation.mjs --since 1h --output both >> ~/.local/share/continuous-learning/logs/conversation.log 2>&1
 
-# 每天凌晨2点：笔记分析
-0 2 * * * cd /path/to/continuous-learning && node scripts/analyze-notes.mjs --incremental >> ~/.local/share/continuous-learning/logs/notes.log 2>&1
+# Daily 02:00: Note analysis
+0 2 * * * cd /path/to/continuous-learning-skill && node scripts/analyze-notes.mjs --incremental >> ~/.local/share/continuous-learning/logs/notes.log 2>&1
 
-# 每天上午9点：网络聚合
-0 9 * * * export TAVILY_API_KEY="your_tavily_api_key_here" && cd /path/to/continuous-learning && node scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json >> ~/.local/share/continuous-learning/logs/web.log 2>&1
+# Daily 09:00: Web aggregation
+0 9 * * * export TAVILY_API_KEY="your_tavily_api_key_here" && cd /path/to/continuous-learning-skill && node scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json >> ~/.local/share/continuous-learning/logs/web.log 2>&1
 
-# 每周一上午9点：行为报告
-0 9 * * 1 cd /path/to/continuous-learning && node scripts/behavior-report.mjs --period weekly --output file >> ~/.local/share/continuous-learning/logs/behavior.log 2>&1
+# Monday 09:00: Behavior report
+0 9 * * 1 cd /path/to/continuous-learning-skill && node scripts/behavior-report.mjs --period weekly --output file >> ~/.local/share/continuous-learning/logs/behavior.log 2>&1
 ```
 
-## 🧪 测试配置
+## 🧪 Test Configuration
 
-### 1. 测试所有模块
+### 1. Test All Modules
 ```bash
-# 进入技能目录
-cd /path/to/continuous-learning
+# Enter skill directory
+cd /path/to/continuous-learning-skill
 
-# 测试对话学习
-echo "测试对话学习..."
+# Test conversation learning
+echo "Testing conversation learning..."
 node scripts/learn-from-conversation.mjs --since "10m" --dry-run
 
-# 测试笔记分析
-echo "测试笔记分析..."
+# Test note analysis
+echo "Testing note analysis..."
 node scripts/analyze-notes.mjs --dry-run
 
-# 测试网络聚合
-echo "测试网络聚合..."
+# Test web aggregation
+echo "Testing web aggregation..."
 export TAVILY_API_KEY="your_tavily_api_key_here"
 node scripts/aggregate-web.mjs --topic "AI" --max-results 2 --dry-run
 
-# 测试行为报告
-echo "测试行为报告..."
+# Test behavior reporting
+echo "Testing behavior reporting..."
 node scripts/behavior-report.mjs --period daily --output console
 ```
 
-### 2. 验证输出
+### 2. Verify Output
 ```bash
-# 检查日志文件
+# Check log files
 ls -la ~/.local/share/continuous-learning/logs/
 
-# 查看最近日志
+# View recent logs
 tail -f ~/.local/share/continuous-learning/logs/*.log
 
-# 检查生成的文件
+# Check generated files
 ls -la ~/.local/share/continuous-learning/knowledge-graph/
 ls -la ~/.local/share/continuous-learning/behavior/
 ```
 
-### 3. 验证权限
+### 3. Verify Permissions
 ```bash
-# 测试文件访问
-node -e "const fs = require('fs'); console.log('OpenClaw会话可访问:', fs.existsSync(process.env.HOME + '/.openclaw/agents/main/sessions/'));"
+# Test file access
+node -e "const fs = require('fs'); console.log('OpenClaw sessions accessible:', fs.existsSync(process.env.HOME + '/.openclaw/agents/main/sessions/'));"
 
-# 测试目录写入
-node -e "const fs = require('fs'); fs.writeFileSync('/tmp/test-permission.txt', 'test'); console.log('写入权限正常'); fs.unlinkSync('/tmp/test-permission.txt');"
+# Test directory write
+node -e "const fs = require('fs'); fs.writeFileSync('/tmp/test-permission.txt', 'test'); console.log('Write permission normal'); fs.unlinkSync('/tmp/test-permission.txt');"
 ```
 
-## 🔄 更新与维护
+## 🔄 Updates & Maintenance
 
-### 1. 更新技能
+### 1. Update Skill
 ```bash
-# 如果从 GitHub 克隆
-cd /path/to/continuous-learning
+# If cloned from GitHub
+cd /path/to/continuous-learning-skill
 git pull origin main
 npm install
 ```
 
-### 2. 备份配置
+### 2. Backup Configuration
 ```bash
-# 备份配置文件
+# Backup configuration files
 cp -r ~/.config/continuous-learning ~/.config/continuous-learning-backup-$(date +%Y%m%d)
 
-# 备份数据文件
+# Backup data files
 cp -r ~/.local/share/continuous-learning ~/.local/share/continuous-learning-backup-$(date +%Y%m%d)
 ```
 
-### 3. 清理旧数据
+### 3. Clean Old Data
 ```bash
-# 清理旧日志 (保留最近30天)
+# Clean old logs (keep last 30 days)
 find ~/.local/share/continuous-learning/logs -name "*.log" -mtime +30 -delete
 
-# 清理旧缓存 (保留最近7天)
+# Clean old cache (keep last 7 days)
 find ~/.local/share/continuous-learning/cache -type f -mtime +7 -delete
 
-# 清理旧行为日志 (保留最近90天)
+# Clean old behavior logs (keep last 90 days)
 find ~/.local/share/continuous-learning/behavior -name "*.json" -mtime +90 -delete
 ```
 
-## 🆘 故障排除
+## 🆘 Troubleshooting
 
-### 常见问题解决
+### Common Problem Solutions
 
-#### 1. "权限被拒绝" 错误
+#### 1. "Permission Denied" Error
 ```bash
-# 检查当前用户
+# Check current user
 whoami
 
-# 检查文件权限
+# Check file permissions
 ls -la ~/.openclaw/
 ls -la ~/.local/share/continuous-learning/
 
-# 修复权限
+# Fix permissions
 sudo chown -R $(whoami) ~/.openclaw
 sudo chown -R $(whoami) ~/.local/share/continuous-learning
 sudo chown -R $(whoami) ~/.config/continuous-learning
 ```
 
-#### 2. "模块未找到" 错误
+#### 2. "Module Not Found" Error
 ```bash
-# 检查 Node.js 版本
+# Check Node.js version
 node --version
 
-# 重新安装依赖
-cd /path/to/continuous-learning
+# Reinstall dependencies
+cd /path/to/continuous-learning-skill
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-#### 3. "API Key 无效" 错误
+#### 3. "API Key Invalid" Error
 ```bash
-# 检查环境变量
+# Check environment variable
 echo $TAVILY_API_KEY
 
-# 测试 API 连接
-curl -s "https://api.tavily.com/search?query=test&api_key=$TAVILY_API_KEY" | jq '.error // "API正常"'
+# Test API connection
+curl -s "https://api.tavily.com/search?query=test&api_key=$TAVILY_API_KEY" | jq '.error // "API normal"'
 ```
 
-#### 4. "内存不足" 错误
+#### 4. "Insufficient Memory" Error
 ```bash
-# 减少并行处理数量
-# 在 config.json 中设置 "parallel_processing": 2
+# Reduce parallel processing count
+# Set "parallel_processing": 2 in config.json
 
-# 增加 Node.js 内存限制
+# Increase Node.js memory limit
 export NODE_OPTIONS="--max-old-space-size=4096"
 ```
 
-### 获取帮助
+### Get Help
 
-1. **查看日志**: `~/.local/share/continuous-learning/logs/`
-2. **启用调试模式**: 设置 `log_level: "debug"`
-3. **联系支持**: 通过 OpenClaw 社区或 GitHub Issues
+1. **View Logs**: `~/.local/share/continuous-learning/logs/`
+2. **Enable Debug Mode**: Set `log_level: "debug"`
+3. **Contact Support**: Through OpenClaw community or GitHub Issues
 
 ---
 
-**配置完成！** 现在可以开始使用 Continuous Learning 技能了。建议先运行测试脚本验证所有功能正常工作。
+**Configuration Complete!** You can now start using the Continuous Learning skill. It's recommended to run the test script first to verify all functions work properly.

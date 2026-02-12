@@ -1,18 +1,18 @@
-# 🚀 Continuous Learning Skill - 快速开始指南
+# 🚀 Continuous Learning Skill - Quick Start Guide
 
-## 5分钟快速上手
+## 5-Minute Quick Start
 
-### 步骤1：初始化
+### Step 1: Initialization
 ```bash
-# 进入技能目录
-cd /Users/sosme_macmini/openclaw/skills/continuous-learning
+# Enter skill directory
+cd /path/to/continuous-learning
 
-# 运行初始化脚本
+# Run initialization script
 node scripts/init-learning.mjs
 ```
 
-### 步骤2：最小配置
-编辑 `~/.config/continuous-learning/config.json`：
+### Step 2: Minimal Configuration
+Edit `~/.config/continuous-learning/config.json`:
 ```json
 {
   "conversation_learning": {
@@ -32,24 +32,24 @@ node scripts/init-learning.mjs
 }
 ```
 
-### 步骤3：测试对话学习
+### Step 3: Test Conversation Learning
 ```bash
-# 分析最近1小时的对话
+# Analyze conversations from the past 1 hour
 node scripts/learn-from-conversation.mjs --since "1h" --output console
 
-# 查看结果
+# View results
 cat ~/openclaw/MEMORY.md | tail -20
 ```
 
-### 步骤4：设置自动化
+### Step 4: Set Up Automation
 ```bash
-# 添加每小时运行的对话学习任务
-openclaw cron add --name "对话学习" --schedule "0 * * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"运行对话学习脚本：node /Users/sosme_macmini/openclaw/skills/continuous-learning/scripts/learn-from-conversation.mjs --since 1h --output both"}'
+# Add hourly conversation learning task
+openclaw cron add --name "Conversation Learning" --schedule "0 * * * *" --sessionTarget isolated --payload '{"kind":"agentTurn","message":"Run conversation learning script: node /path/to/continuous-learning/scripts/learn-from-conversation.mjs --since 1h --output both"}'
 ```
 
-## 进阶配置
+## Advanced Configuration
 
-### 启用笔记分析
+### Enable Note Analysis
 ```json
 {
   "note_analysis": {
@@ -61,26 +61,26 @@ openclaw cron add --name "对话学习" --schedule "0 * * * *" --sessionTarget i
 ```
 
 ```bash
-# 手动运行笔记分析
+# Manually run note analysis
 node scripts/analyze-notes.mjs --incremental
 
-# 查看知识图谱
+# View knowledge graph
 cat ~/.local/share/continuous-learning/knowledge-graph/report.md
 ```
 
-### 启用网络聚合
+### Enable Web Aggregation
 ```bash
-# 设置 API Key
+# Set API Key
 export TAVILY_API_KEY="your-api-key"
 
-# 创建主题配置
+# Create topic configuration
 cp examples/web-aggregation/topics-config.json ~/.config/continuous-learning/topics.json
 
-# 测试聚合
+# Test aggregation
 node scripts/aggregate-web.mjs --topic "AI" --max-results 3
 ```
 
-### 启用行为观察
+### Enable Behavior Observation
 ```json
 {
   "behavior_observation": {
@@ -92,133 +92,133 @@ node scripts/aggregate-web.mjs --topic "AI" --max-results 3
 ```
 
 ```bash
-# 生成行为报告
+# Generate behavior report
 node scripts/behavior-report.mjs --period weekly --output console
 ```
 
-## 常用命令速查
+## Common Command Reference
 
-### 对话学习
+### Conversation Learning
 ```bash
-# 分析最近对话
+# Analyze recent conversations
 node scripts/learn-from-conversation.mjs --since "1h"
 
-# 分析指定时间段
+# Analyze specific time period
 node scripts/learn-from-conversation.mjs --since "24h"
 
-# 输出到 Obsidian
+# Output to Obsidian
 node scripts/learn-from-conversation.mjs --since "1h" --output obsidian
 
-# 详细模式
+# Verbose mode
 node scripts/learn-from-conversation.mjs --since "1h" --verbose
 ```
 
-### 笔记分析
+### Note Analysis
 ```bash
-# 完整分析
+# Complete analysis
 node scripts/analyze-notes.mjs
 
-# 增量分析
+# Incremental analysis
 node scripts/analyze-notes.mjs --incremental
 
-# 指定 vault 路径
+# Specify vault path
 node scripts/analyze-notes.mjs --vault "/path/to/vault"
 
-# 排除文件夹
+# Exclude folders
 node scripts/analyze-notes.mjs --exclude "Attachments,node_modules"
 ```
 
-### 网络聚合
+### Web Aggregation
 ```bash
-# 聚合所有主题
+# Aggregate all topics
 node scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json
 
-# 聚合单个主题
+# Aggregate single topic
 node scripts/aggregate-web.mjs --topic "AI"
 
-# 限制结果数量
+# Limit result count
 node scripts/aggregate-web.mjs --topic "AI" --max-results 5
 
-# 测试模式
+# Test mode
 node scripts/aggregate-web.mjs --topic "AI" --dry-run
 ```
 
-### 行为报告
+### Behavior Reporting
 ```bash
-# 每日报告
+# Daily report
 node scripts/behavior-report.mjs --period daily --output console
 
-# 每周报告（保存到文件）
+# Weekly report (save to file)
 node scripts/behavior-report.mjs --period weekly --output file
 
-# 月度报告
+# Monthly report
 node scripts/behavior-report.mjs --period monthly --output obsidian
 ```
 
-## 自动化配置示例
+## Automation Configuration Example
 
-### 完整自动化配置
+### Complete Automation Configuration
 ```bash
-# 对话学习 - 每小时
-0 * * * * cd /Users/sosme_macmini/openclaw/skills/continuous-learning && node scripts/learn-from-conversation.mjs --since 1h --output both >> ~/.local/share/continuous-learning/logs/conversation.log 2>&1
+# Conversation Learning - Hourly
+0 * * * * cd /path/to/continuous-learning && node scripts/learn-from-conversation.mjs --since 1h --output both >> ~/.local/share/continuous-learning/logs/conversation.log 2>&1
 
-# 笔记分析 - 每天凌晨2点
-0 2 * * * cd /Users/sosme_macmini/openclaw/skills/continuous-learning && node scripts/analyze-notes.mjs --incremental >> ~/.local/share/continuous-learning/logs/notes.log 2>&1
+# Note Analysis - Daily 02:00
+0 2 * * * cd /path/to/continuous-learning && node scripts/analyze-notes.mjs --incremental >> ~/.local/share/continuous-learning/logs/notes.log 2>&1
 
-# 网络聚合 - 每天上午9点
-0 9 * * * export TAVILY_API_KEY="your-api-key" && cd /Users/sosme_macmini/openclaw/skills/continuous-learning && node scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json >> ~/.local/share/continuous-learning/logs/web.log 2>&1
+# Web Aggregation - Daily 09:00
+0 9 * * * export TAVILY_API_KEY="your-api-key" && cd /path/to/continuous-learning && node scripts/aggregate-web.mjs --config ~/.config/continuous-learning/topics.json >> ~/.local/share/continuous-learning/logs/web.log 2>&1
 
-# 行为报告 - 每周一上午9点
-0 9 * * 1 cd /Users/sosme_macmini/openclaw/skills/continuous-learning && node scripts/behavior-report.mjs --period weekly --output file >> ~/.local/share/continuous-learning/logs/behavior.log 2>&1
+# Behavior Report - Monday 09:00
+0 9 * * 1 cd /path/to/continuous-learning && node scripts/behavior-report.mjs --period weekly --output file >> ~/.local/share/continuous-learning/logs/behavior.log 2>&1
 ```
 
-## 故障排除快速指南
+## Quick Troubleshooting Guide
 
-### 1. 权限问题
+### 1. Permission Issues
 ```bash
-# 修复权限
+# Fix permissions
 sudo chown -R $(whoami) ~/.openclaw
 sudo chown -R $(whoami) ~/.local/share/continuous-learning
 ```
 
-### 2. API Key 问题
+### 2. API Key Issues
 ```bash
-# 检查环境变量
+# Check environment variable
 echo $TAVILY_API_KEY
 
-# 临时设置
+# Temporary setup
 export TAVILY_API_KEY="your-api-key"
 ```
 
-### 3. 内存不足
+### 3. Insufficient Memory
 ```bash
-# 增加 Node.js 内存限制
+# Increase Node.js memory limit
 export NODE_OPTIONS="--max-old-space-size=2048"
 ```
 
-### 4. 查看日志
+### 4. View Logs
 ```bash
-# 查看最新日志
+# View latest logs
 tail -f ~/.local/share/continuous-learning/logs/*.log
 
-# 查看错误日志
+# View error logs
 cat ~/.local/share/continuous-learning/logs/error.log
 ```
 
-## 下一步
+## Next Steps
 
-1. **详细配置**：查看 `SETUP.md` 获取完整配置说明
-2. **示例数据**：查看 `examples/` 目录获取测试数据
-3. **高级功能**：阅读 `SKILL.md` 了解所有功能
-4. **自动化**：设置定时任务实现完全自动化
+1. **Detailed Configuration**: View `SETUP_EN.md` for complete configuration instructions
+2. **Example Data**: Check `examples/` directory for test data
+3. **Advanced Features**: Read `SKILL_EN.md` to learn about all features
+4. **Automation**: Set up scheduled tasks for full automation
 
-## 获取帮助
+## Get Help
 
-- **文档**: `SKILL.md`, `SETUP.md`
-- **示例**: `examples/` 目录
-- **测试**: 运行 `./examples/run-test.sh`
-- **日志**: `~/.local/share/continuous-learning/logs/`
+- **Documentation**: `SKILL_EN.md`, `SETUP_EN.md`
+- **Examples**: `examples/` directory
+- **Testing**: Run `./examples/run-test.sh`
+- **Logs**: `~/.local/share/continuous-learning/logs/`
 
 ---
 
-**开始你的 Continuous Learning 之旅吧！** 🚀
+**Start your Continuous Learning journey now!** 🚀

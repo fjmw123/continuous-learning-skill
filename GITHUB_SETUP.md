@@ -1,226 +1,234 @@
-# GitHub 发布指南
+# GitHub Repository Setup Guide
 
-## 📋 准备工作
+## Overview
 
-### 1. 创建 GitHub 仓库
-1. 访问 https://github.com/new
-2. 填写仓库信息：
+This document guides you through publishing the Continuous Learning skill to GitHub, including repository creation, file upload, Issue template configuration, and other steps.
+
+## Prerequisites
+
+### 1. Create GitHub Repository
+1. Visit https://github.com/new
+2. Fill in repository information:
    - **Repository name**: `continuous-learning-skill`
    - **Description**: `Continuous Learning Skill for OpenClaw - Autonomous learning system`
-   - **Public** 或 **Private**（建议先设为私有）
-   - 勾选 "Add a README file"
-   - 选择 MIT License
+   - **Public** or **Private** (recommended to start as private)
+   - Check "Add a README file"
+   - Select MIT License
 
-### 2. 获取 GitHub Token（如果需要命令行上传）
-1. 访问 https://github.com/settings/tokens
-2. 点击 "Generate new token"
-3. 选择权限：
+### 2. Get GitHub Token (if needed for command line upload)
+1. Visit https://github.com/settings/tokens
+2. Click "Generate new token"
+3. Select permissions:
    - `repo` (Full control of private repositories)
-   - `workflow` (可选)
-4. 生成并复制 Token
+   - `workflow` (optional)
+4. Generate and copy Token
 
-## 🚀 上传方式选择
+## 🚀 Upload Methods
 
-### 方案A：使用 GitHub CLI（推荐）
+### Option A: Using GitHub CLI (Recommended)
 
 ```bash
-# 1. 安装 GitHub CLI
+# 1. Install GitHub CLI
 # macOS
 brew install gh
 
-# 2. 登录
+# 2. Login
 gh auth login
 
-# 3. 进入发布目录
-cd /Users/sosme_macmini/openclaw/skills/continuous-learning-publish
+# 3. Enter publish directory
+cd /path/to/continuous-learning-skill
 
-# 4. 初始化 Git
+# 4. Initialize Git
 git init
 git add .
 git commit -m "Initial release: Continuous Learning Skill v1.0.0"
 
-# 5. 创建并推送仓库
+# 5. Create and push repository
 gh repo create continuous-learning-skill --public --source=. --remote=origin --push
 ```
 
-### 方案B：手动 Git 操作
+### Option B: Manual Git Operations
 
 ```bash
-# 1. 进入发布目录
-cd /Users/sosme_macmini/openclaw/skills/continuous-learning-publish
+# 1. Enter publish directory
+cd /path/to/continuous-learning-skill
 
-# 2. 初始化 Git
+# 2. Initialize Git
 git init
 git add .
 git commit -m "Initial release: Continuous Learning Skill v1.0.0"
 
-# 3. 添加远程仓库
+# 3. Add remote repository
 git remote add origin https://github.com/fjmw123/continuous-learning-skill.git
 
-# 4. 推送代码
+# 4. Push code
 git branch -M main
 git push -u origin main
 ```
 
-### 方案C：通过 OpenClaw 上传（需要 Token）
+### Option C: Upload via OpenClaw (requires Token)
 
 ```bash
-# 1. 设置 GitHub Token 环境变量
+# 1. Set GitHub Token environment variable
 export GITHUB_TOKEN="your_github_token_here"
 
-# 2. 通过 exec 执行 git 命令
-# 我会帮你执行上述 git 命令
+# 2. Execute git commands via exec
+# I will help you execute the above git commands
 ```
 
-## 🔧 VSCode 集成
+## 🔧 VSCode Integration
 
-### 1. 在 VSCode 中打开发布目录
+### 1. Open publish directory in VSCode
 ```bash
-code /Users/sosme_macmini/openclaw/skills/continuous-learning-publish
+code /path/to/continuous-learning-skill
 ```
 
-### 2. 安装推荐的扩展
-- **GitLens** - Git 增强功能
-- **GitHub Pull Requests** - PR 管理
-- **Markdown All in One** - Markdown 支持
+### 2. Install recommended extensions
+- **GitLens** - Git enhancement features
+- **GitHub Pull Requests** - PR management
+- **Markdown All in One** - Markdown support
 
-### 3. VSCode Git 操作
-1. 打开 Source Control 面板 (Ctrl+Shift+G)
-2. 点击 "Initialize Repository"
-3. 暂存所有更改
-4. 提交并推送
+### 3. VSCode Git operations
+1. Open Source Control panel (Ctrl+Shift+G)
+2. Click "Initialize Repository"
+3. Stage all changes
+4. Commit and push
 
-## 📁 发布目录结构
+## 📁 Publish Directory Structure
 
 ```
-continuous-learning-publish/
-├── README.md                    # 项目主页
-├── SKILL.md                     # 完整技能文档
-├── SETUP.md                     # 安装配置指南
-├── package.json                 # 依赖配置
-├── LICENSE                      # MIT 许可证
-├── GITHUB_SETUP.md             # 本指南
-├── scripts/                     # 核心脚本
-│   ├── init-learning.mjs       # 初始化脚本
-│   ├── learn-from-conversation.mjs # 对话学习
-│   ├── analyze-notes.mjs       # 笔记分析
-│   ├── aggregate-web.mjs       # 网络聚合
-│   ├── behavior-report.mjs     # 行为报告
-│   └── llm-client.mjs          # LLM 客户端
-└── examples/                    # 示例数据
-    ├── README.md               # 示例说明
-    ├── quick-start.md          # 快速开始
-    ├── run-test.sh             # 测试脚本
-    ├── conversations/          # 对话示例
-    ├── configs/                # 配置示例
-    ├── notes/                  # 笔记示例
-    └── web-aggregation/        # 网络聚合示例
+continuous-learning-skill/
+├── README.md                    # Project homepage (English)
+├── SKILL.md                     # Complete skill documentation (English)
+├── SETUP.md                     # Installation & configuration guide (English)
+├── package.json                 # Dependency configuration
+├── LICENSE                      # MIT License
+├── GITHUB_SETUP.md             # This guide
+├── docs/                        # Chinese documentation (translations)
+│   ├── README_zh.md            # Chinese homepage
+│   ├── SKILL_zh.md             # Chinese skill documentation
+│   └── SETUP_zh.md             # Chinese configuration guide
+├── scripts/                     # Core scripts
+│   ├── init-learning.mjs       # Initialization script
+│   ├── learn-from-conversation.mjs # Conversation learning
+│   ├── analyze-notes.mjs       # Note analysis
+│   ├── aggregate-web.mjs       # Web aggregation
+│   ├── behavior-report.mjs     # Behavior reporting
+│   └── llm-client.mjs          # LLM client
+└── examples/                    # Example data (English)
+    ├── README.md               # Example instructions
+    ├── quick-start.md          # Quick start guide
+    ├── run-test.sh             # Test script
+    ├── conversations/          # Conversation examples
+    ├── configs/                # Configuration examples
+    ├── notes/                  # Note examples
+    └── web-aggregation/        # Web aggregation examples
 ```
 
-## 🔐 隐私保护检查
+## 🔐 Privacy Protection Check
 
-已清理的隐私内容：
-- ✅ 移除具体用户路径 (`/Users/sosme_macmini/...`)
-- ✅ 移除真实 API Key
-- ✅ 移除个人 Obsidian vault 路径
-- ✅ 移除真实会话数据
-- ✅ 使用通用占位符
+Cleaned privacy content:
+- ✅ Removed specific user paths (`/Users/sosme_macmini/...`)
+- ✅ Removed real API Keys
+- ✅ Removed personal Obsidian vault paths
+- ✅ Removed real session data
+- ✅ Used generic placeholders
 
-需要你手动替换的内容：
-- `yourusername` → 你的 GitHub 用户名
-- `your_tavily_api_key_here` → 用户自己的 API Key
-- `/path/to/...` → 用户自己的路径
+Content you need to manually replace:
+- `yourusername` → Your GitHub username
+- `your_tavily_api_key_here` → User's own API Key
+- `/path/to/...` → User's own paths
 
-## 🏷️ 发布标签与版本
+## 🏷️ Release Tags & Versioning
 
-### 创建发布版本
+### Create release version
 ```bash
-# 1. 创建标签
+# 1. Create tag
 git tag -a v1.0.0 -m "Initial release: Continuous Learning Skill"
 
-# 2. 推送标签
+# 2. Push tag
 git push origin v1.0.0
 
-# 3. 在 GitHub 创建 Release
+# 3. Create Release on GitHub
 gh release create v1.0.0 --title "v1.0.0" --notes "Initial release"
 ```
 
-### 版本管理建议
-- `v1.0.0` - 初始发布
-- `v1.1.0` - 功能更新
-- `v1.0.1` - Bug 修复
+### Version management suggestions
+- `v1.0.0` - Initial release
+- `v1.1.0` - Feature updates
+- `v1.0.1` - Bug fixes
 
-## 🤝 协作设置
+## 🤝 Collaboration Settings
 
-### 1. 分支保护规则
-在 GitHub 仓库设置中启用：
+### 1. Branch protection rules
+Enable in GitHub repository settings:
 - Require pull request reviews
 - Require status checks
 - Include administrators
 
-### 2. Issue 模板
-创建 `.github/ISSUE_TEMPLATE/` 目录，添加模板：
+### 2. Issue templates
+Create `.github/ISSUE_TEMPLATE/` directory, add templates:
 - bug_report.md
 - feature_request.md
 
-### 3. Pull Request 模板
-创建 `.github/PULL_REQUEST_TEMPLATE.md`
+### 3. Pull Request template
+Create `.github/PULL_REQUEST_TEMPLATE.md`
 
-## 📊 发布检查清单
+## 📊 Release Checklist
 
-- [ ] 所有隐私内容已清理
-- [ ] 文档完整且可读
-- [ ] 示例数据可用
-- [ ] 测试脚本可运行
-- [ ] 许可证文件已添加
-- [ ] package.json 配置正确
-- [ ] README.md 包含使用说明
-- [ ] GitHub 仓库已创建
-- [ ] 代码已推送
-- [ ] 发布标签已创建
+- [ ] All privacy content cleaned
+- [ ] Documentation complete and readable
+- [ ] Example data available
+- [ ] Test scripts runnable
+- [ ] License file added
+- [ ] package.json configured correctly
+- [ ] README.md includes usage instructions
+- [ ] GitHub repository created
+- [ ] Code pushed
+- [ ] Release tag created
 
-## 🆘 问题解决
+## 🆘 Troubleshooting
 
-### 常见问题
+### Common Issues
 
-#### 1. 权限被拒绝
+#### 1. Permission denied
 ```bash
-# 检查 SSH 密钥
+# Check SSH key
 ssh -T git@github.com
 
-# 或使用 HTTPS 替代 SSH
+# Or use HTTPS instead of SSH
 git remote set-url origin https://github.com/fjmw123/continuous-learning-skill.git
 ```
 
-#### 2. 大文件上传失败
+#### 2. Large file upload failed
 ```bash
-# 安装 Git LFS
+# Install Git LFS
 brew install git-lfs
 
-# 跟踪大文件
+# Track large files
 git lfs track "*.zip" "*.tar.gz"
 git add .gitattributes
 ```
 
-#### 3. 合并冲突
+#### 3. Merge conflicts
 ```bash
-# 拉取最新代码
+# Pull latest code
 git pull origin main
 
-# 解决冲突后
+# After resolving conflicts
 git add .
 git commit -m "Resolve merge conflicts"
 git push
 ```
 
-## 📞 支持
+## 📞 Support
 
-- **GitHub 文档**: https://docs.github.com
-- **Git 教程**: https://git-scm.com/doc
-- **OpenClaw 社区**: https://discord.com/invite/clawd
+- **GitHub Documentation**: https://docs.github.com
+- **Git Tutorial**: https://git-scm.com/doc
+- **OpenClaw Community**: https://discord.com/invite/clawd
 
 ---
 
-**发布完成！** 🎉
+**Release Complete!** 🎉
 
-现在你的 Continuous Learning Skill 已经准备好与 OpenClaw 社区分享了。
+Now your Continuous Learning Skill is ready to share with the OpenClaw community.

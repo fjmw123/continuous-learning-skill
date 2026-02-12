@@ -4,37 +4,37 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
 [![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-blue.svg)](https://openclaw.ai)
 
-**让 OpenClaw 具备自主学习能力，从四个维度持续进化：**
+**Empower OpenClaw with autonomous learning capabilities, evolving across four dimensions:**
 
-1. **对话学习** — 从每次对话中提取偏好、习惯、决策模式
-2. **笔记分析** — 分析 Obsidian 笔记，构建知识关联图谱
-3. **行为观察** — 观察操作模式，识别高频任务和效率瓶颈
-4. **网络聚合** — 定期搜索关注主题，自动整理入库
+1. **Conversation Learning** — Extract preferences, habits, and decision patterns from every dialogue
+2. **Note Analysis** — Analyze Obsidian notes, build knowledge association graphs
+3. **Behavior Observation** — Observe operation patterns, identify high-frequency tasks and efficiency bottlenecks
+4. **Web Aggregation** — Regularly search for topics of interest, automatically organize and store content
 
-## ✨ 核心价值
+## ✨ Core Value
 
-- **个性化服务**：AI 越用越懂你，提供更精准的帮助
-- **知识沉淀**：自动整理对话、笔记、网络内容，构建个人知识库
-- **效率提升**：识别重复工作模式，提供自动化建议
-- **持续进化**：AI 能力随时间增长，无需手动训练
+- **Personalized Service**: AI understands you better over time, providing more precise assistance
+- **Knowledge Accumulation**: Automatically organize conversations, notes, and web content to build a personal knowledge base
+- **Efficiency Improvement**: Identify repetitive work patterns and provide automation suggestions
+- **Continuous Evolution**: AI capabilities grow over time without manual training
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 安装
+### Installation
 ```bash
-# 克隆仓库
-git clone https://github.com/fjmw123/continuous-learning-skill-skill.git
+# Clone the repository
+git clone https://github.com/fjmw123/continuous-learning-skill.git
 cd continuous-learning-skill
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 初始化配置
+# Initialize configuration
 node scripts/init-learning.mjs
 ```
 
-### 最小配置
-编辑 `~/.config/continuous-learning/config.json`：
+### Minimal Configuration
+Edit `~/.config/continuous-learning/config.json`:
 ```json
 {
   "conversation_learning": {
@@ -45,100 +45,101 @@ node scripts/init-learning.mjs
 }
 ```
 
-### 测试
+### Testing
 ```bash
-# 分析最近对话
+# Analyze recent conversations
 node scripts/learn-from-conversation.mjs --since "1h"
 
-# 查看结果
+# View results
 cat ~/openclaw/MEMORY.md | tail -20
 ```
 
-## 📊 功能模块
+## 📊 Feature Modules
 
-### 1. 对话学习器
-- 自动分析 OpenClaw 会话历史
-- 提取事实、偏好、决策、承诺
-- 生成结构化摘要，更新 MEMORY.md
+### 1. Conversation Learner
+- Automatically analyze OpenClaw session history
+- Extract facts, preferences, decisions, commitments
+- Generate structured summaries, update MEMORY.md
 
-### 2. 笔记分析器  
-- 扫描 Obsidian vault 中的所有笔记
-- 提取标签、链接、主题聚类
-- 构建知识图谱，生成链接建议
+### 2. Note Analyzer
+- Scan all notes in Obsidian vault
+- Extract tags, links, topic clusters
+- Build knowledge graphs, generate link suggestions
 
-### 3. 网络聚合器
-- 使用 Tavily API 搜索高质量内容
-- 按主题聚合网络信息
-- 生成中文摘要，保存到 Obsidian
+### 3. Web Aggregator
+- Use Tavily API to search for high-quality content
+- Aggregate web information by topic
+- Generate Chinese summaries, save to Obsidian
 
-### 4. 行为观察器
-- 记录 OpenClaw 命令使用情况
-- 分析高频命令和工作流模式
-- 提供自动化建议
+### 4. Behavior Observer
+- Record OpenClaw command usage
+- Analyze high-frequency commands and workflow patterns
+- Provide automation suggestions
 
-## ⚙️ 配置
+## ⚙️ Configuration
 
-详细配置请参考 [SETUP.md](SETUP.md)，包含：
-- 系统要求与安装步骤
-- 完整配置示例
-- 环境变量设置
-- 权限配置
-- 自动化部署
+For detailed configuration, refer to [SETUP.md](SETUP.md), including:
+- System requirements and installation steps
+- Complete configuration examples
+- Environment variable settings
+- Permission configuration
+- Automated deployment
 
-## 🧪 示例与测试
+## 🧪 Examples & Testing
 
-查看 [examples/](examples/) 目录获取：
-- 示例会话数据
-- 配置模板
-- 自动化测试脚本
-- 快速开始指南
+Check the [examples/](examples/) directory for:
+- Sample session data
+- Configuration templates
+- Automated test scripts
+- Quick start guide
 
-运行测试：
+Run tests:
 ```bash
 ./examples/run-test.sh
 ```
 
-## 🔧 故障排除
+## 🔧 Troubleshooting
 
-常见问题请参考 [SKILL.md](SKILL.md#故障排除) 中的故障排除章节。
+For common issues, refer to the troubleshooting section in [SKILL.md](SKILL.md#troubleshooting).
 
-## 📈 路线图
+## 📈 Roadmap
 
-### v1.1 (近期)
-- [ ] 支持 Notion 集成
-- [ ] 多语言支持
-- [ ] 更智能的链接建议算法
-- [ ] 可视化知识图谱
+### v1.1 (Near-term)
+- [ ] Notion integration support
+- [ ] Multi-language support
+- [ ] Smarter link suggestion algorithms
+- [ ] Visual knowledge graph
 
-### v1.5 (中期)
-- [ ] PDF/文档内容分析
-- [ ] 跨设备学习同步
-- [ ] 个性化模型微调
-- [ ] 主动建议功能
+### v1.5 (Medium-term)
+- [ ] PDF/document content analysis
+- [ ] Cross-device learning synchronization
+- [ ] Personalized model fine-tuning
+- [ ] Proactive suggestion functionality
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Welcome to submit Issues and Pull Requests!
 
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 开启 Pull Request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 支持
+## 📞 Support
 
-- **文档**: [SKILL.md](SKILL.md), [SETUP.md](SETUP.md)
-- **示例**: [examples/](examples/)
-- **问题**: [GitHub Issues](https://github.com/fjmw123/continuous-learning-skill-skill/issues)
+- **Documentation**: [SKILL.md](SKILL.md), [SETUP.md](SETUP.md)
+- **Chinese Documentation**: [docs/](docs/)
+- **Examples**: [examples/](examples/)
+- **Issues**: [GitHub Issues](https://github.com/fjmw123/continuous-learning-skill/issues)
 
 ---
 
-**开始你的 Continuous Learning 之旅吧！** 🚀
+**Start your Continuous Learning journey now!** 🚀
 
-*最后更新: 2026-02-12*  
-*版本: 1.0.0*
+*Last Updated: 2026-02-12*  
+*Version: 1.0.0*
