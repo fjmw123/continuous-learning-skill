@@ -16,18 +16,21 @@
     "continuous-learning",
     "obsidian",
     "knowledge-graph",
-    "automation"
+    "automation",
+    "machine-learning",
+    "personal-ai",
+    "productivity"
   ],
   "author": "SoSME",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/continuous-learning.git"
+    "url": "https://github.com/fjmw123/continuous-learning.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/continuous-learning/issues"
+    "url": "https://github.com/fjmw123/continuous-learning/issues"
   },
-  "homepage": "https://github.com/yourusername/continuous-learning#readme",
+  "homepage": "https://github.com/fjmw123/continuous-learning#readme",
   "engines": {
     "node": ">=16.0.0"
   },
